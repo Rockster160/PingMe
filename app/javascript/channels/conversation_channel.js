@@ -1,9 +1,6 @@
 import consumer from "./consumer"
 
-const channel = consumer.subscriptions.create({
-  channel: "ConversationChannel",
-  code: location.pathname.substring(3)
-}, {
+const channel = consumer.subscriptions.create("UserChannel", {
   connected() {
     console.log("connected");
     // Called when the subscription is ready for use on the server
@@ -21,7 +18,8 @@ const channel = consumer.subscriptions.create({
 
   speak(msg) {
     return this.perform("speak", {
-      body: msg
+      body: msg,
+      code: location.pathname.substring(3)
     })
   }
 });
@@ -41,4 +39,35 @@ document.addEventListener("keydown", function(evt) {
 
     input.value = ""
   }
+})
+
+const resizeTextarea = function(evt) {
+  if (!evt.target.classList.contains("expanding-textarea")) { return }
+
+  const form = q(".message-form")
+  form.style.height = "0px"
+  form.style.height = (evt.target.scrollHeight + 20) + "px"
+
+  const messages = q(".messages")
+  const should_scroll = isScrolledToBottom()
+  messages.style.paddingBottom = form.style.height
+  if (should_scroll) { scrollToBottom() }
+}
+
+const isScrolledToBottom = function() {
+  const conversation = q(".conversation")
+
+  return conversation.scrollTop + conversation.clientHeight >= conversation.scrollHeight
+}
+
+const scrollToBottom = function() {
+  q(".conversation").scrollTo(0, q(".conversation").scrollHeight)
+}
+
+document.addEventListener("keydown", resizeTextarea)
+document.addEventListener("keyup", resizeTextarea)
+document.addEventListener("keypress", resizeTextarea)
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  scrollToBottom()
 })

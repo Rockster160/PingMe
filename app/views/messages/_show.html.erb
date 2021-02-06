@@ -1,4 +1,6 @@
-<div class="message-wrapper" data-author-id="<%= message.author_id %>">
-  <div class="timestamp"><%= message.created_at %></div>
-  <div class="message"><%= message.body %></div>
+<div class="message-wrapper" data-author-id="<%= message.author_id %>" data-direction="<%= [:in, :in, :out].sample %><%#= current_user == message.author ? :in : :out %>">
+  <div class="message-bubble">
+    <div class="timestamp"><%= message.created_at %></div>
+    <div class="message"><%= message.body %></div>
+  </div>
 </div>

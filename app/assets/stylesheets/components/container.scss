@@ -9,7 +9,7 @@ body {
 
   .conversation-wrapper {
     position: relative;
-    background: $grey-neutral;
+    background: $dark;
     width: 100%;
     height: 100%;
 
@@ -22,17 +22,45 @@ body {
 
         .message-wrapper {
           margin: 10px;
+          max-width: 70%;
+          overflow-anchor: none;
 
-          .timestamp {
-            font-size: 8px;
-            color: $grey-light;
-            margin: 0;
-            padding: 0;
+          .message-bubble {
+            display: inline-block;
+            box-shadow: 0 0 4px $grey-darker;
+            border-radius: 20px;
+            background: $light;
+            padding: 15px;
+            text-align: left;
+
+            .timestamp {
+              margin: 0;
+              padding: 0;
+              color: $grey-light;
+              font-size: 8px;
+            }
+
+            .message {
+              color: $text-white;
+              white-space: pre-wrap;
+            }
           }
 
-          .message {
-            white-space: pre-wrap;
+          &[data-direction=out] {
+            margin: 10px 10px 10px auto;
+            text-align: right;
+
+            .message-bubble {
+              background: $primary;
+            }
           }
+        }
+
+        &:after {
+          content: '';
+          height: 1px;
+          display: block;
+          overflow-anchor: auto;
         }
       }
 
@@ -43,7 +71,7 @@ body {
         left: 0;
         padding: 10px;
         width: 100%;
-        height: 60px;
+        height: 51px;
 
         textarea {
           border: none;
