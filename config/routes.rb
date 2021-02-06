@@ -1,3 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "static#home"
+
+  resource :account, only: [:show] do
+  end
+
+  resources :sessions, only: [], path: "account" do
+    collection do
+      get :login
+      get :logout
+      delete :logout
+      get :register
+    end
+  end
+
+  resources :qr_codes, path: :q, param: :code
+  resources :conversations, path: :c, param: :code
 end

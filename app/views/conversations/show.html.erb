@@ -1,0 +1,11 @@
+<div class="conversation">
+  <div class="messages">
+    <% @messages.each do |message| %>
+      <%= render partial: "messages/show", locals: { message: message } %>
+    <% end %>
+  </div>
+
+  <form class="message-form" action="index.html" method="post">
+    <input type="text" name="message-input" value="">
+  </form>
+</div>
