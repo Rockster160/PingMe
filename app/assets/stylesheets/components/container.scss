@@ -27,13 +27,14 @@ body {
 
           .message-bubble {
             display: inline-block;
-            box-shadow: 0 0 4px $grey-darker;
+            box-shadow: 0 0 6px $darker;
             border-radius: 20px;
             background: $light;
             padding: 15px;
             text-align: left;
 
-            .timestamp {
+            time {
+              display: block;
               margin: 0;
               padding: 0;
               color: $grey-light;
