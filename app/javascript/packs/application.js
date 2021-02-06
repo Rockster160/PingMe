@@ -9,3 +9,7 @@ import "channels"
 
 Rails.start()
 ActiveStorage.start()
+
+window.d = function(selector) {
+  return document.querySelector(selector)
+}
