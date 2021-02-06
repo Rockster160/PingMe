@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  background: $grey-dark;
+  padding: 5px;
+  width: 100%;
+
+  img {
+    border-radius: 10px;
+    width: 50px;
+  }
+}

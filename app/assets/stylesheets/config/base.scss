@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  background: $grey-neutral;
+  padding: 0;
+  color: $text;
+}
+
+a,
+a:link {
+  color: $link;
+}
+
+a:visited {
+  color: $link-visited;
+}
+
+a:hover {
+  color: $link-hover;
+  text-shadow: -0.06ex 0 $link-hover, 0.06ex 0 $link-hover;
+}
+
+a:active {
+  color: $link-active;
+}

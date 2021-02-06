@@ -35,7 +35,7 @@ class QrCodesController < ApplicationController
   end
 
   def create_guest_user
-    guest = User.create(role: :guest)
+    guest = User.create
 
     sign_in guest
   end

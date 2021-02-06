@@ -14,6 +14,8 @@
 #  user_id             :bigint
 #
 class QrCode < ApplicationRecord
+  include UrlHelper
+
   belongs_to :user
 
   has_many :qr_views
@@ -27,7 +29,7 @@ class QrCode < ApplicationRecord
   }, _default: :enabled
 
   def qr_url
-    "https://pingme.site/q/#{code}"
+    url_for :qr_code, code
   end
 
   def qr(opts={})
