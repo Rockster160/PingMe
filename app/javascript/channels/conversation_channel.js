@@ -16,7 +16,7 @@ const channel = consumer.subscriptions.create({
 
   received(data) {
     console.log("received data", data);
-    d(".conversation .messages").innerHTML = d(".conversation .messages").innerHTML + data.html
+    q(".conversation .messages").innerHTML = q(".conversation .messages").innerHTML + data.html
   },
 
   speak(msg) {

@@ -15,7 +15,6 @@ class ConversationChannel < ApplicationCable::Channel
     message = conversation.messages.create(author: current_user, body: data["body"])
 
     html = MessagesController.render(partial: "show", locals: { message: message })
-    sleep 1
     ConversationChannel.broadcast_to conversation, { html: html }
   end
 end

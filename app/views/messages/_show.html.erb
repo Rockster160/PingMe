@@ -1,3 +1,4 @@
-<div class="message" data-author-id="<%= message.author_id %>">
-  <%= message.body %>
+<div class="message-wrapper" data-author-id="<%= message.author_id %>">
+  <div class="timestamp"><%= message.created_at %></div>
+  <div class="message"><%= message.body %></div>
 </div>

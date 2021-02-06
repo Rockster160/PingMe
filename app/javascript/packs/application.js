@@ -10,6 +10,6 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
-window.d = function(selector) {
+window.q = function(selector) {
   return document.querySelector(selector)
 }
