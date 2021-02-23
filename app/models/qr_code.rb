@@ -33,7 +33,7 @@ class QrCode < ApplicationRecord
   end
 
   def qr(opts={})
-    @qr ||= RQRCodeCore::QRCode.new(
+    @qr ||= RQRCode::QRCode.new(
       opts.delete(:url) || qr_url,
       {
         size: 2,

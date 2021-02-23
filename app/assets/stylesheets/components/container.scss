@@ -21,9 +21,9 @@ body {
         padding-bottom: 60px;
 
         .message-wrapper {
+          overflow-anchor: none;
           margin: 10px;
           max-width: 70%;
-          overflow-anchor: none;
 
           .message-bubble {
             display: inline-block;
@@ -58,10 +58,10 @@ body {
         }
 
         &:after {
-          content: '';
-          height: 1px;
-          display: block;
           overflow-anchor: auto;
+          display: block;
+          height: 1px;
+          content: '';
         }
       }
 
