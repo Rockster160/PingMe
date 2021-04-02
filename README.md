@@ -18,9 +18,9 @@ The entire platform is reasonably free- for basic cases, you don't ever NEED to 
 
 ## Authentication
 
-Use OTP when registering/signing in rather than storing a password. Multiple auth strategies can be added to your account. Whichever strategy is used while signing in, send the notification through that channel. (Sign in with phone number sends and sms, sign in with email address sends an email)
+Use OTP when registering/signing in rather than storing a password. Multiple auth strategies can be added to your account. Whichever strategy is used while signing in, send the notification through that channel. (Sign in with phone number sends an sms, sign in with email address sends an email)
 
-Eventually allow for other messaging/notification platforms, but require at least sms or phone number as a base. (Slack, Discord, Line Chat, WhatsApp, anything with a notifiable API)
+Eventually allow for other messaging/notification platforms, but require at least email or phone number as a base. (Slack, Discord, Line Chat, WhatsApp, anything with a notifiable API)
 
 Always track IP/location/timestamp on log in.
 
